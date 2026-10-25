@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/*
+ * Hallmark · genre: editorial · macrostructure: Portfolio Grid · theme: custom "Atelier"
+ * enrichment: none (typography only) · nav: N9 edge-aligned · footer: Ft2 inline single line
+ * palette: paper oklch(96% 0.012 80) · ink oklch(18% 0.010 60) · accent #FC4C02 (signal orange)
+ */
+
+:root {
+  --color-paper: oklch(96% 0.012 80);
+  --color-paper-2: oklch(93% 0.014 80);
+  --color-rule: oklch(82% 0.01 80);
+  --color-neutral: oklch(56% 0.008 80);
+  --color-muted: oklch(40% 0.008 70);
+  --color-ink: oklch(18% 0.01 60);
+  --color-paper-locked: oklch(93.5% 0.008 80);
+  --color-accent: #fc4c02;
+  --color-focus: oklch(55% 0.19 55);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-paper-2: var(--color-paper-2);
+  --color-paper-locked: var(--color-paper-locked);
+  --color-rule: var(--color-rule);
+  --color-neutral: var(--color-neutral);
+  --color-muted: var(--color-muted);
+  --color-ink: var(--color-ink);
+  --color-accent: var(--color-accent);
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-sans: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-ibm-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-fraunces), ui-serif, Georgia, serif;
+  font-style: normal;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.measure {
+  max-width: 65ch;
+}
+
+.card-track {
+  min-width: 0;
+}
+
+.no-motion {
+  transform: none !important;
+  transition: none !important;
+  animation: none !important;
+}
